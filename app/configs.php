@@ -5,7 +5,7 @@ define('URL','http://localhost/phplogin');
 if(count($_POST) === 0)
 {
     $_SESSION['_token'] = md5(time() + rand(0,9999));
-}
+}else $_SESSION['last_mail_time'] = 0;  
 
 return [
     'db' => [

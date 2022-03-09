@@ -28,9 +28,7 @@ if($diff >= 60)
     $mailer -> subject = 'Verify Link';
     $mailer -> body = '<h1>Here is a verify link:<br><b><a href="'. site_url('verify/' . $hash ) .'">VERIFY LINK</a></b></h1>';
     try{
-        ob_start();
         $mailer -> toUser($_SESSION['email']);
-        ob_clean();     
         $message = "We have just sent verify link yo your email adress.";
         $_SESSION['last_mail_time'] = time();    
     }catch(Exception $e)

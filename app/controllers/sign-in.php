@@ -25,7 +25,6 @@ if(isset($_POST['_token']))
                 }else{
                     $error = 'Password is wrong!';
                 }
-
             }else{
                 $error = "Email is wrong!";
             }

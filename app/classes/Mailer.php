@@ -40,7 +40,9 @@ class Mailer{
         $this->initValues();
         $this->mail->addAddress($userMail,$userName);
         try{
+            ob_start();
             $this->mail->send();
+            ob_clean();
             return true;
         }catch(Exception $e)
         {
@@ -64,7 +66,9 @@ class Mailer{
             $this->mail->addAddress($usersMail[$i],$usersName[$i]);
         }
         try{
+            ob_start();
             $this->mail->send();
+            ob_clean();
             return true;
         }catch(Exception $e)
         {
